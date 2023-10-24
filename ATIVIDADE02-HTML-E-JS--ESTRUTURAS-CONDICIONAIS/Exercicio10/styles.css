@@ -1,0 +1,16 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#idade:hover{
+    height: 25px;
+}
+#idade:focus{
+    height: 25px;
+}

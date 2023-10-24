@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Desenvolva um algoritmo que leia 3 valores inteiros e os apresente em ordem decrescente.
+        
+    </h2>
+
+    <input type="text" placeholder="Insira o 1° número" id="n1" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o 2° número" id="n2" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o 3° número" id="n3" style="width: 280px;"><br><br>
+    
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() =>{
+            let n1 = Number(document.getElementById("n1").value);
+            let n2 = Number(document.getElementById("n2").value);
+            let n3 = Number(document.getElementById("n3").value);
+            let h1 = document.getElementById("result")
+
+            if(n1 > n2 && n1 > n3){
+                h1.innerHTML = `${n1}<br>`
+                if(n2 > n3){
+                    h1.innerHTML += `${n2}<br>`;
+                    h1.innerHTML += `${n3}<br>`;
+                }
+                else{
+                    h1.innerHTML += `${n3}<br>`; 
+                    h1.innerHTML += `${n2}<br>`;
+                }
+            }
+
+            else if(n2 > n1 && n2 > n3){
+                h1.innerHTML = `${n2}<br>`
+                if(n2 > n1){
+                    h1.innerHTML += `${n1}<br>`;
+                    h1.innerHTML += `${n3}<br>`;
+                }
+                else{
+                    h1.innerHTML += `${n3}<br>`; 
+                    h1.innerHTML += `${n1}<br>`;
+                }
+            }
+
+            else if(n3 > n1 && n3 > n2){
+                h1.innerHTML = `${n3}<br>`
+                if(n1 > n2){
+                    h1.innerHTML += `${n1}<br>`;
+                    h1.innerHTML += `${n2}<br>`;
+                }
+                else{
+                    h1.innerHTML += `${n2}<br>`; 
+                    h1.innerHTML += `${n1}<br>`;
+                }
+            }
+
+            else{
+                h1.innerHTML = `Os números são iguais`
+            }
+            
+        })
+    
+    </script>
+</body>
+</html>

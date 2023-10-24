@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Elaborar um algoritmo que lê 2 valores a e b e os escreve com a mensagem: "São múltiplos"
+        ou "Não são múltiplos".
+        </h2>
+
+    <input type="text" placeholder="Insira um valor para A" id="numero1" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira um valor para B" id="numero2" style="width: 280px;"><br><br>
+    
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let button = document.querySelector("button");
+    button.addEventListener("click", () => {
+        let numero1 = Number(document.getElementById("numero1").value);
+        let numero2 = Number(document.getElementById("numero2").value);
+        let h1 = document.getElementById("result")
+
+        if (numero1 % numero2 == 0){
+            h1.innerHTML = `${numero1} é multiplo de ${numero2}!!`
+        }
+        else if (numero1 % numero2 != 0){
+            h1.innerHTML = `${numero1} não é multiplo de ${numero2}!!`
+        }
+        else{
+            h1.innerHTML = `${numero1} e ${numero2} são iguais!!`
+        }
+    })
+</script>

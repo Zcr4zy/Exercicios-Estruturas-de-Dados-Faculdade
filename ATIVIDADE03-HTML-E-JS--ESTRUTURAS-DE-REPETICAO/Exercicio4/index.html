@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Escreva um programa que calcule a soma dos quadrados dos primeiros N números
+        inteiros positivos, onde N é inserido pelo usuário.        
+    </h2>
+
+    <input type="text" placeholder="Insira um numero" id="num">
+    <h1 style="text-align: center;"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+   let botao = document.querySelector("button");
+   botao.addEventListener('click', () => {
+    let h1 = document.querySelector("h1")
+    let num = Number(document.getElementById("num").value); let soma = 0; let n;
+
+    for(n = 1; n <= num; n++){
+        soma += Math.pow(n, 2);
+    }
+
+    h1.innerHTML += `A Soma de Todos os Quadrados dos Números Antecessores e o Próprio ${num} é: ${soma}` + "<br>"
+
+   });
+</script>

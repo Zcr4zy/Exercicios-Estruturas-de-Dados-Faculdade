@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>O custo ao consumidor de um carro novo, é a soma do custo de fábrica com a percentagem do revendedor e
+        com o custo dos impostos (aplicados ao custo de fábrica). Supondo que a percentagem do revendedor seja de
+        25% do custo de fábrica e que os impostos custam 45 % do custo de fábrica, faça um algoritmo que leia o
+        valor de custo de fábrica e determine o preço final do automóvel (custo ao consumidor).
+        
+        </h2>
+
+    <input type="text" placeholder="Insira o valor de fabrica do automóvel" id="custo" style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular7()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    function Calcular7(){
+
+        let custoFab = Number(document.getElementById("custo").value);
+        let pervendedor = (25 / 100) * custoFab;
+        let impostos = (45 / 100) * custoFab;
+        let precoFinal = custoFab + pervendedor + impostos;
+
+        document.getElementById("result").innerHTML = "O valor final será de: R$"+ precoFinal;
+
+    }
+</script>

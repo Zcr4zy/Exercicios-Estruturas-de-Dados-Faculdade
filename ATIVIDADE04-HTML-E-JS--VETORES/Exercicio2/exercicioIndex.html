@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+
+<body style="background-color: black;">
+    <h2 style="text-align: center;color: white;"> Crie um programa que some dois vetores de mesmo tamanho e armazene o resultado em
+        um terceiro vetor.</h2>
+
+
+    <h1 id="results" style="text-align: center;color: white ;"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular2()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <style>
+        #num1:hover {
+            height: 25px;
+        }
+
+        #num1:focus {
+            height: 25px;
+        }
+
+
+        #num2:hover {
+            height: 25px;
+        }
+
+        #num2:focus {
+            height: 25px;
+        }
+    </style>
+
+</body>
+
+</html>
+
+<script>
+    let tamanho = 3;
+    let vetor01 = []
+    let vetor02 = []
+    let vetor03 = []
+    function Calcular2() {
+        lerVetores();
+    }
+
+
+    function lerVetores() {
+        for (let i = 0; i < tamanho; i++) {
+           let x1 = Number(prompt(`Insira o ${i+1}° elemento do 1°Vetor --> `));
+           vetor01.push(x1)
+           
+           let x2 = Number(prompt(`Insira o ${i+1}° elemento do 2°Vetor --> `));
+           vetor02.push(x2)
+
+           vetor03.push(vetor01[i] + vetor02[i]);
+           document.getElementById("results").innerHTML += `${vetor03[i]} <br>`
+        }
+
+    }
+
+
+
+
+
+
+</script>

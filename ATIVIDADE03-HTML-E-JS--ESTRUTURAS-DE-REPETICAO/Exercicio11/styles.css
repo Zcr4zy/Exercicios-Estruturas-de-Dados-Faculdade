@@ -1,0 +1,17 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#palavra:hover{
+    height: 25px;
+}
+#palavra:focus{
+    height: 25px;
+}
+

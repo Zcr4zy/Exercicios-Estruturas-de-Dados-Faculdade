@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Ler um vetor com 20 números inteiros e apresentar o resultado da multiplicação dos valores
+        pelos seus índices.
+        </h2>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular4()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    function Calcular4(){
+
+        let vetor = new Array(20);
+        let novoVetor = new Array(vetor.length);
+
+        for(let i = 0; i < vetor.length; i++){
+            vetor[i] = Number(prompt(`Insira um número para o ${i+1}° elemento do vetor --> `));
+            novoVetor[i] = vetor[i] * i;
+            
+        }
+
+        document.getElementById("result").innerHTML = "Resultados: <br>"
+        for(let i = 0; i < vetor.length; i++){
+            document.getElementById("result").innerHTML += novoVetor[i] + " ";
+        }
+
+
+
+    }
+</script>

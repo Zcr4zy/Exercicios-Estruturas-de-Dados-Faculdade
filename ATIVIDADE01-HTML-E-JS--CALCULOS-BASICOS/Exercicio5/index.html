@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Considerando que para um consórcio, sabe-se o número total de prestações, a quantidade de prestações
+        pagas e o valor atual da prestação, escreva um algoritmo que determine o total pago pelo consorciado e o
+        saldo devedor.
+        </h2>
+
+    <input type="text" placeholder="Insira a quantidade de prestações" id="qtdePrestacoes" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a quantidade de prestações já pagas" id="qtdePrestacoesPagas"style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor das prestações" id="valorPrestacoes"style="width: 280px;"><br><br>
+
+    
+    <h1 style="text-align: center;" id="result"></h1>
+    <h1 style="text-align: center;" id="result1"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular5()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    function Calcular5(){
+
+        let qtdePrestacoes = Number(document.getElementById("qtdePrestacoes").value); 
+        let prestacoesPagas = Number(document.getElementById("qtdePrestacoesPagas").value); 
+        let valorPrestacoes = Number(document.getElementById("valorPrestacoes").value); 
+
+        let pago = prestacoesPagas * valorPrestacoes; 
+        let faltandopagar = (qtdePrestacoes - prestacoesPagas) * valorPrestacoes;
+
+        document.getElementById("result").innerHTML = "Valor Pago: R$" + pago;
+        document.getElementById("result1").innerHTML = "Saldo Devedor: R$ " + faltandopagar;
+
+    }
+</script>

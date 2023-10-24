@@ -1,0 +1,30 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#valor:hover{
+    height: 25px;
+}
+#valor:focus{
+    height: 25px;
+}
+
+#taxa:hover{
+    height: 25px;
+}
+#taxa:focus{
+    height: 25px;
+}
+
+#quantidadeDias:hover{
+    height: 25px;
+}
+#quantidadeDias:focus{
+    height: 25px;
+}

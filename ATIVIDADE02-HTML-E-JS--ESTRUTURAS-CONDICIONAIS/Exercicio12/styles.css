@@ -1,0 +1,24 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#id:hover{
+    height: 25px;
+}
+#id:focus{
+    height: 25px;
+}
+
+#qtde:hover{
+    height: 25px;
+}
+#qtde:focus{
+    height: 25px;
+}
+

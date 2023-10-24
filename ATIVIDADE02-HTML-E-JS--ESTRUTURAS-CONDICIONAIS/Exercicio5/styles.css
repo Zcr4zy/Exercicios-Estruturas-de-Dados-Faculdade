@@ -1,0 +1,26 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#numero1:hover{
+    height: 25px;
+}
+
+#numero1:focus{
+    height: 25px;
+}
+
+
+#numero2:hover{
+    height: 25px;
+}
+
+#numero2:focus{
+    height: 25px;
+}

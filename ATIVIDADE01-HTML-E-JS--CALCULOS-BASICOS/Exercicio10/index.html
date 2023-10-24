@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Analisando a fórmula "Prestação = valor + (valor * (taxa/100) * tempo)", crie um algoritmo para efetuar o
+        cálculo do valor de uma prestação em atraso.Você deverá ler o VALOR da prestação, a TAXA de juros
+        imposta pelo banco, e o número de dias em ATRASO.
+
+    </h2>
+
+    <input type="text" placeholder="Insira o valor da prestação" id="valor" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a taxa de juros imposta pelo banco" id="taxa" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o numero de dias em atraso do pagamento" id="quantidadeDias"
+        style="width: 280px;"><br><br>
+
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular10()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Calcular10() {
+
+        let valorPrestacao = Number(document.getElementById("valor").value);
+        let taxa = Number(document.getElementById("taxa").value);
+        let Dias = Number(document.getElementById("quantidadeDias").value);
+
+        let prestacao = valorPrestacao + (valorPrestacao * (taxa / 100) * Dias);
+
+        document.getElementById("result").innerHTML = "Com o atraso do pagamento, você deve pagar agora R$" + prestacao;
+    }
+</script>

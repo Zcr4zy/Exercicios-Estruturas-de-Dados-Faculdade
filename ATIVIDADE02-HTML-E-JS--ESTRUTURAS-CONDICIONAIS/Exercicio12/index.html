@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>O cardápio de uma lanchonete é o seguinte:
+
+
+    </h2>
+    <div style="text-align: center;">
+        <img src="figura.png" alt="" ><br><br>
+    </div>
+    <h2>
+        Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a ser
+        pago por aquele lanche. Considere que a cada execução somente será calculado um item.
+    </h2>
+    
+    <input type="text" placeholder="Insira o código do produto" id="id" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a quantidade deste produto" id="qtde" style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let botao = document.querySelector("button");
+    botao.addEventListener("click",() => {
+        let qtde = Number(document.getElementById("qtde").value);
+        let id = Number(document.getElementById("id").value);
+        let h1 = document.getElementById("result");
+
+        switch(id){
+            case 100:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.20}`;break;
+            case 101:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.30}`;break;
+            case 102:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.50}`;break;
+            case 103:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.20}`;break;
+            case 104:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.30}`;break;
+            case 105:
+                h1.innerHTML = `O produto de código ${id}, na quantidade de ${qtde}, está totalizando R$${qtde*1.00}`;break;
+            default:
+                h1.innerHTML = `CÓDIGO NÃO RECONHECIDO!`;break;
+        }
+    })
+</script>

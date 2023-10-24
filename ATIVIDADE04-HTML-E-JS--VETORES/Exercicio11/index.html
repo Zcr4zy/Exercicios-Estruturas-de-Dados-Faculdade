@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        td.empty {
+            background-color: #aaffaa;
+        }
+
+        td.occupied {
+            background-color: #ffaaaa;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Crie um programa para simular a venda de ingressos para uma sessão de cinema de uma
+        sala que possui 4 fileiras com 20 poltronas cada. Deve-se permitir ao usuário exibir as
+        poltronas, mostrando de alguma forma se estão ocupadas ou vazias. Também deve-se
+        permitir ao usuário comprar um poltrona, onde este deve informar a fileira (nomeadas como
+        A, B, C e D), e o número da poltrona; lembre-se que se a poltrona já estiver ocupada não
+        deve-se concluir a venda. O sistema também deve apresentar ao usuário o total de poltronas
+        vazias e ocupadas.
+    </h2>
+    <div style="text-align: center;">
+        <img src="img1.png" alt=""><br><br>
+    </div>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <label for="fileira">Escolha a Fileira (A, B, C, D):</label>
+        <input type="text" id="fileira" maxlength="1" style="text-transform: uppercase;">
+        <label for="numero">Número da Poltrona (1-20):</label>
+        <input type="number" id="numero" min="1" max="20">
+        <button onclick="comprarPoltrona()">Comprar</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        const totalFileiras = 4;
+        const poltronasPorFileira = 20;
+        const seats = Array.from({ length: totalFileiras }, () => Array(poltronasPorFileira).fill(false));
+
+        function exibirPoltronas() {
+            let display = '<table>';
+            for (let i = 0; i < totalFileiras; i++) {
+                display += '<tr>';
+                for (let j = 0; j < poltronasPorFileira; j++) {
+                    display += '<td class="' + (seats[i][j] ? 'occupied' : 'empty') + '" onclick="comprarPoltrona(' + i + ',' + j + ')">' + (j + 1) + '</td>';
+                }
+                display += '</tr>';
+            }
+            display += '</table>';
+            document.getElementById('result').innerHTML = display;
+        }
+
+        function comprarPoltrona() {
+            const fileiraInput = document.getElementById('fileira').value.toUpperCase();
+            const numeroInput = document.getElementById('numero').value - 1;
+
+            if (fileiraInput.length === 1 && numeroInput >= 0 && numeroInput < poltronasPorFileira) {
+                const fileira = fileiraInput.charCodeAt(0) - 'A'.charCodeAt(0);
+
+                if (!seats[fileira][numeroInput]) {
+                    seats[fileira][numeroInput] = true;
+                    alert('Venda concluída com sucesso!');
+                } else {
+                    alert('Poltrona já ocupada. Escolha outra.');
+                }
+
+                exibirPoltronas();
+                exibirTotalPoltronas();
+            } else {
+                alert('Por favor, insira valores válidos para a fileira (A, B, C, D) e o número da poltrona (1-20).');
+            }
+        }
+
+        function exibirTotalPoltronas() {
+            let totalVazias = 0;
+            let totalOcupadas = 0;
+            for (let i = 0; i < totalFileiras; i++) {
+                for (let j = 0; j < poltronasPorFileira; j++) {
+                    if (seats[i][j]) {
+                        totalOcupadas++;
+                    } else {
+                        totalVazias++;
+                    }
+                }
+            }
+            alert('Total de poltronas vazias: ' + totalVazias + '\nTotal de poltronas ocupadas: ' + totalOcupadas);
+        }
+
+        exibirPoltronas();
+    </script>
+</body>
+
+</html>

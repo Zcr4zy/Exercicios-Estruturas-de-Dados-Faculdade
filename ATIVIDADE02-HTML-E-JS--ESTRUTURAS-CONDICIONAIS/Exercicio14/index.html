@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Tendo como dados de entrada a idade, altura e o sexo de uma pessoa (‘M’ masculino e ‘F’
+        feminino), construa um algoritmo que calcule seu peso ideal, utilizando as seguintes
+        fórmulas:        
+    </h2>
+
+    <div style="text-align: center;">
+        <img src="figura.png" alt="" ><br><br>
+    </div>
+
+    <input type="text" placeholder="Insira o seu sexo: M(Masculino) ou F(Feminino)" id="sexo" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a sua idade" id="idade" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a sua altura" id="altura" style="width: 280px;"><br><br>
+    
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() => {
+            let h = Number(document.getElementById("altura").value);
+            let s = document.getElementById("sexo").value;
+            let i = Number(document.getElementById("idade").value);
+            let h1 = document.getElementById("result");
+            
+            if (s == "M"){
+                if(h > 1.70){
+                    if(i <= 20){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*72.7) - 58}`
+                    }
+                    else if (i >=21 && i <= 39){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*72.7) - 53}`
+                    }
+                    else {
+                        h1.innerHTML = `O seu peso ideal é: ${(h*72.7) - 45}`
+                    }
+                }
+                else if(h <= 1.70){
+                    if(i <= 40){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*72.7) - 50}`
+                    }
+                    else if(i > 40){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*72.7) - 58}`
+                    }
+                }
+            }
+            else {
+                if(h <= 1.50){
+                    if(i >= 35){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*62.1) - 45}`
+                    }
+                    else if(i < 35){
+                        h1.innerHTML = `O seu peso ideal é: ${(h*62.1) - 49}`
+                    }
+                }
+                else if (h > 1.50){
+                    h1.innerHTML = `O seu peso ideal é: ${(h*62.1) - 44.7}`
+                }
+            }
+
+          
+        })
+    </script>
+</body>
+
+</html>
+

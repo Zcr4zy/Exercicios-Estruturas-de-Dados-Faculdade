@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Dados 3 valores A, B e C, verificar se eles podem ser os comprimentos dos lados de um
+        triângulo e, se forem, verificar se compõem um triângulo equilátero, isósceles ou escaleno.
+        Informar se não compuserem nenhum triângulo.
+        <br><br>• O que é um triângulo? Figura geométrica de 3 lados, onde cada um é menor do que a
+        soma dos outros dois
+        <br>• O que é um triângulo equilátero? Um triângulo com 3 lados iguais.
+        <br>• O que é um triângulo isóscele? Um triângulo com 2 lados iguais.
+        <br>• O que é um triângulo escaleno? Um triângulo com todos os lados diferentes;
+        
+    </h2>
+
+    <input type="text" placeholder="Insira o 1° Número" id="A" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o 2° Número" id="B" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o 3° Número" id="C"
+        style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() => {
+            let a = Number(document.getElementById("A").value);
+            let b = Number(document.getElementById("B").value);
+            let c = Number(document.getElementById("C").value);
+            let h1 = document.getElementById("result");
+    
+            if((a < (b + c))||(b < (a + c)) || (c < (a + b))){
+                h1.innerHTML = `É um Triãngulo: `
+                if(a == b && a == c){
+                    h1.innerHTML += `EQUILÁTERO`
+                }
+                else if(a == b || b == c || c == a){
+                    h1.innerHTML += `ISÓCELES`
+                }
+                else{
+                    h1.innerHTML += `ESCALENO`
+                }
+            }
+            else {
+                h1.innerHTML = `NÃO É UM TRIÂNGULO` 
+            }
+        })
+    </script>
+</body>
+
+</html>
+

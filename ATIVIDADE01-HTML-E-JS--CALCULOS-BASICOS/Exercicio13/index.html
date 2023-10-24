@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elaborar um algoritmo que calcule a equação do 2º grau.
+    </h2>
+
+    <input type="text" placeholder="Insira o valor de A" id="A" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de B" id="B" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de C" id="C"
+        style="width: 280px;"><br><br>
+
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular13()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Calcular13() {
+
+        let a = Number(document.getElementById("A").value);
+        let b = Number(document.getElementById("B").value);
+        let c = Number(document.getElementById("C").value);
+
+        let delta = Math.pow(b,2) - (4*a*c);
+        let x1 = (-b + Math.sqrt(delta))/(2*a);
+        let equacao1 = a*Math.pow(x1,2) + b * x1 + c;
+
+        let x2 = (-b - Math.sqrt(delta))/(2*a);
+        let equacao2 = a*Math.pow(x2,2) + b * x2 + c;
+
+        document.getElementById("result").innerHTML = "Equação 1: " + equacao1 + ". Equação 2: " + equacao2;
+
+    }
+</script>

@@ -1,0 +1,31 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+
+#n1:hover{
+    height: 25px;
+}
+#n1:focus{
+    height: 25px;
+}
+
+#n2:hover{
+    height: 25px;
+}
+#n2:focus{
+    height: 25px;
+}
+
+#n3:hover{
+    height: 25px;
+}
+#n3:focus{
+    height: 25px;
+}

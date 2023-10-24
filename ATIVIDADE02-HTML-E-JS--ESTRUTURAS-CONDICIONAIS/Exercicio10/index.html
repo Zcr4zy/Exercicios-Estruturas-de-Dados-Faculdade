@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elabore um algoritmo que dada a idade de um nadador classifica-o em uma das seguintes
+        categorias:
+    </h2>
+    <div style="text-align: center;">
+        <img src="figura.png" alt=""><br><br>
+    </div>
+
+    <input type="text" placeholder="Insira a sua idade, nadador" id="idade" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() => {
+            let id = Number(document.getElementById("idade").value), h1 = document.getElementById("result");
+
+            if(id >=5 && id <=7 ){
+                h1.innerHTML = `VOCÊ PERTENCE A CATEGORIA INFANTIL A, POIS POSSUI ${id} ANOS!`
+            }
+            else if(id >= 8 && id <=10){
+                h1.innerHTML = `VOCÊ PERTENCE A CATEGORIA INFANTIL B, POIS POSSUI ${id} ANOS!`
+            }
+            else if(id >= 11 && id <= 13){
+                h1.innerHTML = `VOCÊ PERTENCE A CATEGORIA JUVENIL A, POIS POSSUI ${id} ANOS!`
+            }
+            else if (id >=  14 && id <= 17){
+                h1.innerHTML = `VOCÊ PERTENCE A CATEGORIA JUVENIL B, POIS POSSUI ${id} ANOS!`
+            }
+            else if(id < 5 || id > 80){
+                h1.innerHTML = `IDADE FORA DOS PARÂMETROS`
+            }
+            else if(id >= 18){
+                h1.innerHTML = `VOCÊ PERTENCE A CATEGORIA ADULTO, POIS POSSUI ${id} ANOS!`
+            }
+            
+        })
+    </script>
+</body>
+
+</html>

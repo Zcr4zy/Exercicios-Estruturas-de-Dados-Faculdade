@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Solicite ao usuário que insira uma palavra e conte quantas vogais (a, e, i, o, u) estão
+        na palavra.
+    </h2>
+    <!--<div style="text-align: center;">
+        <img src="figura.png" alt=""><br><br>
+    </div>-->
+   
+    <input type="text" placeholder="Insira uma palavra" id="palavra" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let botao = document.querySelector("button");
+    botao.addEventListener("click",() => {
+        let palavra = document.getElementById("palavra").value;
+        let h1 = document.getElementById("result");
+        let contador = 0; let i = 0;
+
+        while (i < palavra.length){
+            if(palavra[i] == "a" || palavra[i] == "A" 
+            || palavra[i] == "e" || palavra[i] == "E"
+            || palavra[i] == "i" || palavra[i] == "I"
+            || palavra[i] == "o" || palavra[i] == "O"
+            || palavra[i] == "u" || palavra[i] == "U"){
+                contador++;
+                i++
+            }
+            else{
+            i++
+            }
+        }
+
+        h1.innerHTML += `A quantidade de vogais na palavra ${palavra} eh: ${contador}`
+
+
+
+        
+        
+    })
+</script>

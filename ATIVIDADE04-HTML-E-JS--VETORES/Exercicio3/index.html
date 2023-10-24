@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Crie um procedimento para inverter a ordem dos elementos em um vetor de 20 elementos.</h2>
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular3()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    let vetor = new Array(20);
+    let novoVetor = new Array(20);
+    function Calcular3(){
+        for(let i = 0; i < vetor.length; i++){
+            vetor[i] = Number(prompt(`Insira o ${i+1} elemento --> `));
+        }
+
+        let j = 0;
+        for(let i = 19; i >= 0;i--){
+            novoVetor[j] = vetor[i];
+            j++;
+        }
+
+        document.getElementById("result").innerHTML += `Novo Vetor: <br>`
+        for(let i = 0; i < vetor.length;i++){
+            document.getElementById("result").innerHTML += `${novoVetor[i]} <br>`
+            console.log(`${novoVetor[i]}`)
+        }
+
+
+    }
+
+</script>

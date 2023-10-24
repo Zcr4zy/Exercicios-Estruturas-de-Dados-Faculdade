@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Escreva um algoritmo que leia três números inteiros e positivos (A, B, C) e calcule a seguinte expressão:
+    </h2>
+    <div style="text-align: center;">
+        <img src="img1.png" alt=""><br><br>
+    </div>
+   
+    <input type="text" placeholder="Insira o valor de A" id="A" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de B" id="B" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de C" id="C"
+        style="width: 280px;"><br><br>
+
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular11()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Calcular11() {
+
+        let a = Number(document.getElementById("A").value);
+        let b = Number(document.getElementById("B").value);
+        let c = Number(document.getElementById("C").value);
+
+        let r = (a + b); r = Math.pow(r, 2);
+        let s = (b + c); s = Math.pow(s, 2);
+
+        d = (r + s)/2;
+
+        document.getElementById("result").innerHTML = "D" +" = "+ r +" + "+ s + " /  2" +"   <br>       D = " + d;
+    }
+</script>

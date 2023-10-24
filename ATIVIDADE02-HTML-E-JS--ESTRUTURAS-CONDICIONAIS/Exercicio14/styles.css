@@ -1,0 +1,30 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#altura:hover{
+    height: 25px;
+}
+#altura:focus{
+    height: 25px;
+}
+
+#idade:hover{
+    height: 25px;
+}
+#idade:focus{
+    height: 25px;
+}
+
+#sexo:hover{
+    height: 25px;
+}
+#sexo:focus{
+    height: 25px;
+}

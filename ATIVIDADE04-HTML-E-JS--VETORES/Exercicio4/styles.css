@@ -1,0 +1,16 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#cheque:hover{
+    height: 25px;
+}
+#cheque:focus{
+    height: 25px;
+}

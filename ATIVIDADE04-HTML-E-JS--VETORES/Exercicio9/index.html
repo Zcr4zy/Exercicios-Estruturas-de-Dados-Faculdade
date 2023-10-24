@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Tentando descobrir se um dado era viciado, um dono de cassino honesto (ha! ha! ha! ha!) o
+        lançou 50 vezes. Dados os 50 resultados dos lançamentos armazenados em um vetor,
+        determinar o número de ocorrências e a porcentagem de cada face.
+        
+    </h2>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular9()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let lancamentos = new Array(50)
+    function Calcular9(){
+        for(let i = 0; i < lancamentos.length;i++){
+            lancamentos[i] = Math.floor(Math.random()*6)+1
+        }
+
+        let contagemFaces = [0, 0, 0, 0, 0, 0];
+        for (let i = 0; i < lancamentos.length; i++) {
+            contagemFaces[lancamentos[i] - 1]++;
+        }
+
+        let porcentagens = [];
+        for (let i = 0; i < contagemFaces.length; i++) {
+            let porcentagem = (contagemFaces[i] / 50) * 100;
+            porcentagens.push(porcentagem.toFixed(2) + '%');
+        }
+
+        document.getElementById("result").innerHTML = "Resultados:<br>";
+        for (let i = 0; i < contagemFaces.length; i++) {
+            document.getElementById("result").innerHTML += `Face ${i + 1}: ${contagemFaces[i]} ocorrências (${porcentagens[i]})<br>`;
+        }
+
+    }
+</script>

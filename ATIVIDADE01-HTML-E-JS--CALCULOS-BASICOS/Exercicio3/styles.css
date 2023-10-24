@@ -1,0 +1,17 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#numero:focus{
+    height: 25px;
+}
+
+#numero:hover{
+    height: 25px;
+}

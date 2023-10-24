@@ -1,0 +1,17 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#saldo:hover{
+    height: 25px;
+}
+#saldo:focus{
+    height: 25px;
+}
+

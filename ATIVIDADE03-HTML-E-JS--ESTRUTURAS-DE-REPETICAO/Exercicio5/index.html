@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2> Crie um programa que exiba todos os múltiplos de três de 1 a 100 usando um loop for.
+    </h2>
+    
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Ver</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let button = document.querySelector("button");
+    button.addEventListener("click", () => {
+        let h1 = document.querySelector("h1")
+        h1.innerHTML = "Os Números Múltiplos de 3 São: " + "<br>"
+        for(let n = 1; n < 101; n++){
+            if(n % 3 == 0){
+                h1.innerHTML += `${n}` + "<br>"
+            }
+        }
+    })
+</script>

@@ -1,0 +1,16 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#custo:hover{
+    height: 25px;
+}
+#custo:focus{
+    height: 25px;
+}

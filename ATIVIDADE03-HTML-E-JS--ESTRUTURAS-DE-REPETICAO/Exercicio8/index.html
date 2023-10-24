@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Peça ao usuário um número inteiro e determine se ele é primo ou não.
+        
+    </h2>
+
+    <input type="text" placeholder="Insira um número inteiro" id="num" style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() =>{
+            let num = Number(document.getElementById("num").value);
+            let h1 = document.getElementById("result")
+
+            if(num < 2){
+                h1.innerHTML += `${num} não é primo!`
+            }
+            else{
+                let Primo = true;
+                for(let i = 2; i <= Math.sqrt(num); i++){
+                    if(num % i == 0){
+                        Primo = false;
+                        break;
+                    }
+                }
+                if(Primo){
+                    h1.textContent = `${num} é primo!`;
+                }
+                else{
+                    h1.textContent = `${num} não é primo!`;
+                }
+            }
+        })
+
+
+    
+    </script>
+</body>
+</html>

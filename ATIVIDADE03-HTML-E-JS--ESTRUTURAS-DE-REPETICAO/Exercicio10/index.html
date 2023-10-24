@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2> Escreva um programa que gera e exibe os primeiros N números da sequência de
+        Fibonacci, onde N é fornecido pelo usuário.
+    </h2>
+    <!--<div style="text-align: center;">
+        <img src="figura.png" alt=""><br><br>
+    </div>-->
+
+    <input type="text" placeholder="Insira um número para N " id="num" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click", () => {
+            let num = Number(document.getElementById("num").value);
+            let h1 = document.getElementById("result");
+            let termo1 = 0;
+            let termo2 = 1;
+            let proximo_termo = 0; let i = 1;
+
+            h1.innerHTML += `Os ${num} termos da sequencia de Fibonacci: <br>`
+
+            for (; i <= num; i++) {
+                h1.innerHTML += `${termo1} <br>`;
+                proximo_termo = termo1 + termo2;
+                termo1 = termo2;
+                termo2 = proximo_termo;
+            }
+        })
+    </script>
+</body>
+
+</html>

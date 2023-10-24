@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Crie uma função que exiba separadamente os elementos pares e impares de um vetor de 10
+        elementos.
+        </h2>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular7()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    
+    function Calcular7(){
+        let numeros = new Array(10),
+            numeros_pares = new Array(),
+            numeros_impares = new Array()
+        for(let i = 0; i < numeros.length;i++){
+            numeros[i] = Number(prompt(`Insira o ${i+1}° elemento do vetor --> `))
+            if(numeros[i] % 2 == 0){
+                numeros_pares.push(numeros[i])
+            }
+            else{
+                numeros_impares.push(numeros[i])
+            }
+        }
+        document.getElementById("result").innerHTML += `Vetor: ${numeros}<br>Números Pares deste vetor: ${numeros_pares}<br>Números Ímpares: ${numeros_impares}`
+    }
+</script>

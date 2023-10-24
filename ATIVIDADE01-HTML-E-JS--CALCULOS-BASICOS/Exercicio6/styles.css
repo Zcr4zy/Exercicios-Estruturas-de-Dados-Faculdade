@@ -1,0 +1,37 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#nome:hover{
+    height: 25px;
+}
+#nome:focus{
+    height: 25px;
+}
+
+#nota1:hover{
+    height: 25px;
+}
+#nota1:focus{
+    height: 25px;
+}
+
+#nota2:hover{
+    height: 25px;
+}
+#nota2:focus{
+    height: 25px;
+}
+
+#nota3:hover{
+    height: 25px;
+}
+#nota3:focus{
+    height: 25px;
+}

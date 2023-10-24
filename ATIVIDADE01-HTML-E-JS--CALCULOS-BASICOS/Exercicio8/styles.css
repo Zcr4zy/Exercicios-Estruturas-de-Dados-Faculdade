@@ -1,0 +1,30 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#nome:hover{
+    height: 25px;
+}
+#nome:focus{
+    height: 25px;
+}
+
+#salarioF:hover{
+    height: 25px;
+}
+#salarioF:focus{
+    height: 25px;
+}
+
+#qtdeV:hover{
+    height: 25px;
+}
+#qtdeV:focus{
+    height: 25px;
+}

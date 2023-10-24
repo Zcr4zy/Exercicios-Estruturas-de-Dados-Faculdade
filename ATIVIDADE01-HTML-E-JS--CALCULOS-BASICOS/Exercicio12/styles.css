@@ -1,0 +1,16 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#tempF:hover{
+    height: 25px;
+}
+#tempF:focus{
+    height: 25px;
+}

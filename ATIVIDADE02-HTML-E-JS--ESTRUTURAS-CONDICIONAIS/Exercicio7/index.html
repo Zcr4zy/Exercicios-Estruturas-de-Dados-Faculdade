@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elabore um algoritmo que calcule a equação do 2º grau, calculando o valor de Delta, x’ e x’’;
+        (caso não seja possível calcular os valores de x apresentar uma mensagem informando o
+        valor de Delta e que este é negativo, não permitindo a continuação dos cálculos.
+    </h2>
+
+    <input type="text" placeholder="Insira o valor de A" id="A" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de B" id="B" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de C" id="C" style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button id="calcular">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.getElementById("calcular");
+        botao.addEventListener("click", () => {
+            let h1 = document.getElementById("result");
+            let a = Number(document.getElementById("A").value);
+            let b = Number(document.getElementById("B").value);
+            let c = Number(document.getElementById("C").value);
+
+            let delta = Math.pow(b, 2) - (4 * a * c);
+            if (delta < 0) {
+                h1.innerHTML = `Delta (${delta}) é negativo. Com isso, não será possível continuar o exercício!`;
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                h1.innerHTML = `Delta: ${delta}, x': ${x1}, x'': ${x2}`;
+            }
+        });
+    </script>
+</body>
+
+</html>

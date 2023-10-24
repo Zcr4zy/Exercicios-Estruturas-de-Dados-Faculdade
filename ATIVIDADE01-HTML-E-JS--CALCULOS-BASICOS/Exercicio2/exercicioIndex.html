@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+
+<body style="background-color: black;">
+    <h2 style="text-align: center;color: white;"> Faça um algoritmo que leia 2 números e ao final mostre a soma, subtração, multiplicação e divisão do primeiro
+        pelo segundo.</h2>
+    <input type="text" id="num1" placeholder="Insira o numero 1"><br><br>
+    <input type="text" id="num2" placeholder="Insira o numero 2"><br><br>
+
+    <div id="results" style="color: white;">
+    <h1 style="text-align: center;" id="resultsum"></h1>
+    <h1 style="text-align: center;" id="resultsub"></h1>
+    <h1 style="text-align: center;" id="resultmult"></h1>
+    <h1 style="text-align: center;" id="resultdiv"></h1>
+    </div>
+    
+    <div style="text-align: center;">
+        <button onclick="Calcular2()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+   
+<style>
+    #num1:hover{
+    height: 25px;
+}
+
+#num1:focus{
+    height: 25px;
+}
+
+
+#num2:hover{
+    height: 25px;
+}
+
+#num2:focus{
+    height: 25px;
+}
+</style>
+
+</body>
+
+</html>
+
+<script>
+    function Calcular2() {
+        let numero1 = Number(document.getElementById("num1").value);
+        let numero2 = Number(document.getElementById("num2").value);
+        let soma = numero1 + numero2;
+        let sub = numero1 - numero2;
+        let mult = numero1 * numero2;
+        let div = numero1 / numero2;
+
+        document.getElementById("resultsum").innerHTML = "SOMA = " + soma;
+        document.getElementById("resultsub").innerHTML = "SUBTRAÇÃO = " + sub;
+        document.getElementById("resultmult").innerHTML = "MULTIPLICAÇÃO = " + mult;
+        document.getElementById("resultdiv").innerHTML = "DIVISÃO = " + div;
+    }
+</script>

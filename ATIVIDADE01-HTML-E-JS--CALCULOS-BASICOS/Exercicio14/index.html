@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elabore um algoritmo que leia dois valores inteiros, A e B, e apresente os valores trocados, ou seja, que
+        troque o valor da variável A pelo valor da variável B e vice-versa.
+    </h2>
+
+    <input type="text" placeholder="Insira o valor de A" id="A" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira o valor de B" id="B" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular14()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Calcular14() {
+        let a = Number(document.getElementById("A").value);
+        let b = Number(document.getElementById("B").value);
+        
+        let c = a;
+        a = b; b = c;
+        
+        document.getElementById("result").innerHTML = "O valor de A agora é "+ a +" e o valor de B agora é " + b;
+
+    }
+</script>

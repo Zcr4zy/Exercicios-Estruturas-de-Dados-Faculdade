@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Peça ao usuário para inserir um número inteiro positivo e calcule o fatorial desse número usando
+        um loop.
+        
+        
+    </h2>
+
+    <input type="text" placeholder="Insira um número inteiro e positivo" id="numero" style="width: 280px;"><br><br>
+    
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button");
+        botao.addEventListener("click",() =>{
+            let num = Number(document.getElementById("numero").value);
+            let h1 = document.getElementById("result");
+            let fat = 1;
+          
+            for(let i = 1; i <= num; i++){
+              fat *= i;
+            }
+          
+            h1.innerHTML = `O fatorial de ${num} é: ${fat}`;
+            
+        })
+    
+    </script>
+</body>
+</html>

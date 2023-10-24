@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no
+        último ano. Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do
+        crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio e o
+        valor do crédito.
+    </h2>
+    <div style="text-align: center;">
+        <img src="figura.png" alt=""><br><br>
+    </div>
+   
+    <input type="text" placeholder="Insira o saldo médio" id="saldo" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let botao = document.querySelector("button");
+    botao.addEventListener("click",() => {
+        let saldo = Number(document.getElementById("saldo").value);
+        let h1 = document.getElementById("result");
+        let quantia;
+
+        if(saldo >= 0 && saldo <=200){
+            h1.innerHTML = `Não haverá nenhum aumento no saldo médio`
+        }
+        else if(saldo >=201 && saldo <= 400){
+            quantia = (saldo * 0.20) + saldo;
+            h1.innerHTML = `Hávera aumento de 20% no valor do saldo de ${saldo}, mais precisamente R$${saldo*0.20}, totalizando um saldo médio atual de R$${quantia}`;
+        }
+        else if(saldo >= 401 && saldo <= 600){
+            quantia = (saldo * 0.30) + saldo;
+            h1.innerHTML = `Hávera aumento de 30% no valor do saldo de ${saldo}, mais precisamente R$${saldo*0.30}, totalizando um saldo médio atual de R$${quantia}`;
+        }
+        else {
+            quantia = (saldo * 0.40) + saldo;
+            h1.innerHTML = `Hávera aumento de 40% no valor do saldo de ${saldo}, mais precisamente R$${saldo*0.40}, totalizando um saldo médio atual de R$${quantia}`;
+        }
+    })
+</script>

@@ -1,0 +1,36 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#qtdePrestacoes:hover{
+    height: 25px;
+}
+
+#qtdePrestacoes:focus{
+    height: 25px;
+}
+
+
+#qtdePrestacoesPagas:hover{
+    height: 25px;
+}
+
+#qtdePrestacoesPagas:focus{
+    height: 25px;
+}
+
+
+
+#valorPrestacoes:hover{
+    height: 25px;
+}
+
+#valorPrestacoes:focus{
+    height: 25px;
+}

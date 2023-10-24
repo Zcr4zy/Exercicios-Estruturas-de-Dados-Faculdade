@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Elaborar um algoritmo que efetue a apresentação do valor da conversão em real (R$) de um valor lido em
+        dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar e também a quantidade de dólares
+        disponíveis com o usuário.
+        
+    </h2>
+
+    <input type="text" placeholder="Insira o valor do dólar atualmente" id="valor" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a quantidade de doláres que você possui" id="quantidadeD" style="width: 280px;"><br><br>
+    
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular9()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    function Calcular9(){
+
+        let valorDolar = Number(document.getElementById("valor").value);
+        let quantidade_Dolares = Number(document.getElementById("quantidadeD").value);
+
+        let reais = quantidade_Dolares * valorDolar;
+
+        document.getElementById("result").innerHTML = "Em doláres, você possui US$" + quantidade_Dolares + ", em reais você possui R$" + reais;
+
+
+
+
+    }
+</script>

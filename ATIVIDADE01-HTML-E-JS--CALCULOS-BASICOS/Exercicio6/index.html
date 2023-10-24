@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Construa um algoritmo que leia o nome de um aluno e três notas obtidas durante o semestre, ao final mostre
+        o nome do aluno e a média aritmética das notas.
+        </h2>
+
+    <input type="text" placeholder="Insira o nome do aluno" id="nome" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a 1° nota" id="nota1" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a 2° nota" id="nota2" style="width: 280px;"><br><br>
+    <input type="text" placeholder="Insira a 3° nota" id="nota3" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular6()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    function Calcular6(){
+
+        let nome = document.getElementById("nome").value;
+        let nota1 = Number(document.getElementById("nota1").value);
+        let nota2 = Number(document.getElementById("nota2").value);
+        let nota3 = Number(document.getElementById("nota3").value);
+
+        let media = (nota1 + nota2 + nota3) / 3;
+
+        document.getElementById("result").innerHTML = "Média de "+ nome + ": " + media;
+
+    }
+</script>

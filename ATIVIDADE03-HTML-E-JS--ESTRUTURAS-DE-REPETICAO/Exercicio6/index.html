@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Escreva um programa que solicite ao usuário um número inteiro positivo e calcule
+        a soma de todos os números pares de 1 até o número inserido.
+    </h2>
+
+    <input type="text" placeholder="Insira um número" id="n1" style="width: 280px;"><br><br>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let botao = document.querySelector("button");
+    botao.addEventListener('click',() => {
+        let n = Number(document.getElementById("n1").value);
+        let h1 = document.getElementById("result"); let soma = 0; let i;
+
+        for(i = 1; i <= n; i++ ){
+            if(i % 2 == 0){
+                soma += i;
+            }
+        }   
+        h1.innerHTML += `A Soma de Todos os Pares eh: ${soma}` + "<br>"
+    })
+</script>

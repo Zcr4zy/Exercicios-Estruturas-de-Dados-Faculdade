@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Crie um algoritmo onde o usuário forneça dois vetores de inteiros com 20 posições e um
+        outro vetor de caracteres de mesmo tamanho para conter as operações aritméticas. Os
+        resultados das operações com esses vetores devem ser armazenados em um terceiro vetor
+        
+    </h2>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular8()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let vetor01 = new Array(20),
+        vetor02 = new Array(20),
+        op = new Array(20),
+        resultados = new Array(20)
+    function Calcular8(){
+        for(let i = 0; i < vetor01.length;i++){
+            op[i] = prompt(`Insira um tipo de operação por meio de sinais (+,-,*,/) --> `);
+            vetor01[i] = Number(prompt(`Insira um valor para o ${i+1}° elemento do primeiro vetor --> `));
+            vetor02[i] = Number(prompt(`Insira um valor para o ${i+1}° elemento do segundo vetor --> `));
+
+            switch(op[i]){
+                case "+": 
+                    resultados[i] = vetor01[i] + vetor02[i]
+                    break;
+                case "-":
+                    resultado[i] = vetor01[i] - vetor02[i]
+                    break;
+                case "*":
+                    resultados[i] = vetor01[i] * vetor02[i]
+                    break;
+                case "/":
+                    resultados[i] = vetor01[i] / vetor02[i]
+                    break;
+                default:
+                    op[i] = prompt(`Insira um tipo de operação válido por meio de sinais (+,-,*,/) --> `);
+            }
+        }
+
+        document.getElementById("result").innerHTML = "Resultados: <br>";
+    for (let i = 0; i < resultados.length; i++) {
+        document.getElementById("result").innerHTML += `${resultados[i]}<br>`;
+    }
+        
+
+    }
+</script>

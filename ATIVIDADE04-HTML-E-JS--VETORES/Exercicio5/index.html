@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Crie um programa que leia 24 temperaturas, em graus celsius, considerando que cada
+        posição de leitura é o horário da temperatura, registrada ao longe do dia. Ao final exiba ao
+        usuário a maior e menor temperatura, bem como o horário de sua ocorrência, e a média das
+        temperaturas registradas.
+        </h2>
+    
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular5()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let temperatura = new Array(24);
+    let maiortemperatura = Number.MIN_SAFE_INTEGER;
+    let menor_temperatura = Number.MAX_SAFE_INTEGER;
+    let indice_maior_temperatura;
+    let indice_menor_temperatura;
+    let soma = 0;
+    
+
+    function Calcular5(){
+        for(let i = 0; i < temperatura.length;i++){
+            if(i >= 1){
+                temperatura[i] = Number(prompt(`Insira outra temperatura em Graus Celsius: `));
+                if(temperatura[i] > maiortemperatura){
+                    maiortemperatura = temperatura[i]
+                    indice_maior_temperatura = i
+                }
+                if(temperatura[i] < menor_temperatura){
+                    menor_temperatura = temperatura[i]
+                    indice_menor_temperatura = i
+                }
+                soma += temperatura[i]
+            }
+
+            else{
+                temperatura[i] = Number(prompt(`Insira uma temperatura em Graus Celsius: `));
+                if(temperatura[i] > maiortemperatura){
+                    maiortemperatura = temperatura[i]
+                    indice_maior_temperatura = i
+                }
+                if(temperatura[i] < menor_temperatura){
+                    menor_temperatura = temperatura[i]
+                    indice_menor_temperatura = i
+                }
+                soma += temperatura[i]
+            }
+        }
+
+        document.getElementById("result").innerHTML += `Maior Temperatura: ${maiortemperatura}°C;<br>Horário da Maior Temperatura Atingida: ${indice_maior_temperatura}Hrs<br><br>Menor Temperatura: ${menor_temperatura}°C<br>Horario da Menor Temperatura Atingida: ${indice_menor_temperatura}Hrs<br><br>Média de Temperaturas: ${soma / temperatura.length}`
+    }
+</script>

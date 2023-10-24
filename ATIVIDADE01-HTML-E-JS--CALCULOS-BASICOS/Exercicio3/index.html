@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elabore um algoritmo que leia um número inteiro e mostre o valor deste número elevado ao quadrado.</h2>
+
+    <input type="text" placeholder="Insira um número" id="numero">
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular3()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    function Calcular3(){
+        let numero = Number(document.getElementById("numero").value);
+        let qd = Math.pow(numero, 2);
+
+        document.getElementById("result").innerHTML = "QUADRADO DE " + numero + " EH: " + qd;
+    }
+
+</script>

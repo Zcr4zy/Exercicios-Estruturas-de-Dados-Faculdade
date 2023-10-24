@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+
+<body style="background-color: black;">
+    <h2 style="text-align: center;color: white;"> O sistema de avaliação de determinada disciplina, é composto por três provas. A primeira
+        prova tem peso 4, a Segunda tem peso 3 e a terceira prova tem peso 3. Faça um algoritmo
+        para calcular a média final de um aluno desta disciplina. Caso a média seja maior ou igual a
+        7 mostre APROVADO, se a média for entre 5 e 7, mostre em RECUPERAÇÃO, e se for menor
+        do que 5 mostre REPROVADO.</h2>
+    <input type="text" id="num1" placeholder="Insira sua nota da 1° prova"><br><br>
+    <input type="text" id="num2" placeholder="Insira sua nota da 2° prova"><br><br>
+    <input type="text" id="num3" placeholder="Insira sua nota da 3° prova"><br><br>
+
+    <div id="results" style="color: white;">
+    <h1 style="text-align: center;"></h1>
+    </div>
+    
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+   
+<style>
+    #num1:hover{
+    height: 25px;
+}
+
+#num1:focus{
+    height: 25px;
+}
+
+
+#num2:hover{
+    height: 25px;
+}
+
+#num2:focus{
+    height: 25px;
+}
+
+#num3:hover{
+    height: 25px;
+}
+
+#num3:focus{
+    height: 25px;
+}
+</style>
+
+</body>
+
+</html>
+
+<script>
+    let button = document.querySelector("button");
+    button.addEventListener('click',() => {
+        let prova1 = Number(document.getElementById("num1").value);
+        let prova2 = Number(document.getElementById("num2").value);
+        let prova3 = Number(document.getElementById("num3").value);
+        let h1 = document.querySelector("h1");
+
+        let media = ((prova1*4) + (prova2*3) + (prova3*3)) / 10;
+
+        if (media >= 7){
+            h1.innerHTML = `APROVADO!!` 
+        }
+        else if (media >= 5 && media < 7){
+            h1.innerHTML = `RECUPERAÇÃO!!`;
+        }
+        else {
+            h1.innerHTML = `REPROVADO!!`;
+        }
+    })
+    
+</script>

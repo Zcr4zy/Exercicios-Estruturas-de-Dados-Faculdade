@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Faça um algoritmo que leia uma temperatura em Graus Fahrenheits e mostre a temperatura em Graus
+        Celsius. Para isso use a fórmula:
+
+    </h2>
+    <div style="text-align: center;">
+        <img src="imagem.png" alt="" ><br><br>
+    </div>
+    
+    <input type="text" placeholder="Insira uma temperatura em Fahrenheits" id="tempF" style="width: 280px;"><br><br>
+
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular12()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Calcular12() {
+
+        let tempF = Number(document.getElementById("tempF").value);
+        let tempC = (tempF - 32) * (5/9);
+
+
+        document.getElementById("result").innerHTML = tempF + "F° em Celsius é: " + tempC + "C°";
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Elaborar um algoritmo que informe se um número informado pelo usuário é par ou ímpar.
+    </h2>
+
+    <input type="text" placeholder="Insira um número" id="numero">
+    <h1 style="text-align: center;"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    let botao = document.querySelector("button");
+    botao.addEventListener('click', () => {
+        let numero = Number(document.getElementById("numero").value);
+        let h1 = document.querySelector("h1");
+
+        if (numero % 2 == 0){
+            h1.innerHTML = `${numero} É PAR`;
+        }
+        else{
+            h1.innerHTML = `${numero} É ÍMPAR`;
+        }
+    })
+</script>

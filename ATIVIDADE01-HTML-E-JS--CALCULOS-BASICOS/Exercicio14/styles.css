@@ -1,0 +1,23 @@
+body{
+    color:white;
+    background-color: black;
+
+}
+
+h2{
+    text-align: center;
+}
+
+#A:hover{
+    height: 25px;
+}
+#A:focus{
+    height: 25px;
+}
+
+#B:hover{
+    height: 25px;
+}
+#B:focus{
+    height: 25px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Crie um programa que leia um vetor de 10 elementos reais, calcule e exiba a média
+        aritmética destes elementos.
+        </h2>
+
+    <h1 style="text-align: center;" id="result"></h1>
+    <div style="text-align: center;">
+        <button onclick="Calcular6()" style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+    let numeros = new Array(10),
+        soma = 0;
+    function Calcular6(){
+        for(let i = 0; i < numeros.length;i++){
+            numeros[i] = parseFloat(prompt(`Insira o ${i+1}° elemento do vetor --> `));
+            while (isNaN(numeros[i])) {
+                numeros[i] = parseFloat(prompt("Por favor, insira um número real válido."));
+            }
+            soma += numeros[i]
+        
+        }
+
+        let media = soma / numeros.length;
+        document.getElementById("result").innerHTML += `A média de todos os elementos do vetor <br>${numeros}<br><br>Média: ${media}`
+    }
+
+   
+</script>

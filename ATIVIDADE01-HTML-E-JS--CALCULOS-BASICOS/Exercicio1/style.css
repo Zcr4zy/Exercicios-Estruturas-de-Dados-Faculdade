@@ -1,0 +1,34 @@
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+#numero1:hover{
+    height: 25px;
+}
+
+#numero1:focus{
+    height: 25px;
+}
+
+
+#numero2:hover{
+    height: 25px;
+}
+
+#numero2:focus{
+    height: 25px;
+}
+
+
+#numero3:hover{
+    height: 25px;
+}
+
+#numero3:focus{
+    height: 25px;
+}
+
+
+

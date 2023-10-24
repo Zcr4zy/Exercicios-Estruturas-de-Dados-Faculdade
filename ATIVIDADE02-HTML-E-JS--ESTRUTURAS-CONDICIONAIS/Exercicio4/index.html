@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Elaborar um algoritmo que informe se um ano informado pelo usuário é bissexto ou não
+    </h2>
+
+    <input type="text" placeholder="Insira um ano" id="ano">
+    <h1 style="text-align: center;"></h1>
+    <div style="text-align: center;">
+        <button style="text-align: center;">Calcular</button><br><br>
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+</body>
+</html>
+
+<script>
+   let botao = document.querySelector("button");
+   botao.addEventListener('click', () => {
+    let h1 = document.querySelector("h1")
+    let ano = Number(document.getElementById("ano").value);
+
+    if((ano % 4 == 0) || (ano % 400 == 0 && ano % 100 !== 0)){
+        h1.innerHTML = `${ano} é um ano bissexto!`
+    }
+    else {
+        h1.innerHTML = `${ano} não é um ano bissexto!`
+    }
+
+   });
+</script>
