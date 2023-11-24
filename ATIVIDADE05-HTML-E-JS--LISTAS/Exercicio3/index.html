@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCICIO 03</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    #output {
+      margin-top: 10px;
+    }
+
+    .botao-retorno {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .botao-retorno2 {
+      text-decoration: none;
+      padding: 2px 20px;
+      background-color: limegreen;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .botao-retorno3 {
+      text-decoration: none;
+      padding: 2px 20px;
+      background-color: blue;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="center-text">Fila de Impressão:<br><br>
+    • Crie uma fila para simular um sistema de impressão.
+    <br>• Utilize uma fila para gerenciar as solicitações de impressão, armazenando o nome dos arquivos a serem
+    impressos.
+    • Implemente a funcionalidade de impressão, removendo os arquivos da fila
+  </h2><br>
+
+
+
+  <div style="border: 1px solid white;">
+    <div>
+      <h2>Fila de Impressão</h2>
+      <label for="nomeArquivo">Nome do Arquivo:</label>
+      <input type="text" id="nomeArquivo" placeholder="Insira o Nome do Arquivo">
+      <button onclick="adicionarFila()" class="botao-retorno2">Adicionar à Fila</button>
+    </div>
+
+    <div>
+      <h3>Fila de Impressão</h3>
+      <ul id="fila"></ul>
+      <button onclick="imprimir()" class="botao-retorno3">Imprimir</button>
+    </div>
+
+    <div id="output"></div>
+    
+  </div><br>
+
+  <div class="center-text">
+    <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+  </div>
+
+  <script>
+    let filaDeImpressao = [];
+
+    function adicionarFila() {
+      let nomeArquivo = document.getElementById('nomeArquivo').value;
+      if (nomeArquivo.trim() !== "") {
+        filaDeImpressao.push(nomeArquivo);
+        atualizarFila();
+        limparCampo();
+      }
+    }
+
+    function atualizarFila() {
+      let filaElemento = document.getElementById('fila');
+      filaElemento.innerHTML = "";
+      filaDeImpressao.forEach(function (arquivo) {
+        let li = document.createElement('li');
+        li.textContent = arquivo;
+        filaElemento.appendChild(li);
+      });
+    }
+
+    function limparCampo() {
+      document.getElementById('nomeArquivo').value = "";
+    }
+
+    function imprimir() {
+      if (filaDeImpressao.length > 0) {
+        let arquivoImprimindo = filaDeImpressao.shift();
+        exibirMensagem("Imprimindo: " + arquivoImprimindo);
+        atualizarFila();
+      } else {
+        exibirMensagem("A fila de impressão está vazia.");
+      }
+    }
+
+    function exibirMensagem(mensagem) {
+      let outputElemento = document.getElementById('output');
+      outputElemento.textContent = mensagem;
+    }
+  </script>
+
+</body>
+
+</html>

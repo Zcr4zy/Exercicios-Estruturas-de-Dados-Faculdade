@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 class="center-text">Ordenação de Tarefas:<br><br>
+        • Crie os métodos necessários a um gerenciador de tarefas, onde o usuário pode adicionar e remover tarefas.
+        <br>• Implemente um método para listar todas as tarefas da lista.
+    </h2><br>
+
+    <button class="custom-button" onclick="MostrarTarefas()">Escolher Opções</button><br><br><br>
+
+    <input type="text" placeholder="Insira a tarefa a ser adicionada" class="hidden" id="inpADD" style="display: none;">
+    <button class="custom-button hidden" onclick="AdicionarTarefas()" id="butADD" style="display: none;">Enviar tarefa a ser realizada</button><br><br><br>
+
+    <input type="text" placeholder="Insira a posição da tarefa a ser removida da lista" class="hidden" id="inpREM" style="display: none;">
+    <button class="custom-buttona hidden" onclick="RemoverTarefas()" id="butREM" style="display: none;">Remover Tarefa</button>
+
+    <h1 id="resultado" class="center-text"></h1>
+    <div class="center-text">
+        <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+
+    <script src="teste.js"></script>
+</body>
+
+</html>

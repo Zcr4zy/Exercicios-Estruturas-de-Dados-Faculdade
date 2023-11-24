@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCICIO 02</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div>
+    <h2 class="center-text">Editor de Texto Simples:<br><br>
+      • Desenvolva um editor de texto básico com uma área de texto.
+      <br>• Utilize uma pilha para implementar a funcionalidade "Desfazer" (Ctrl+Z) para as alterações de texto.
+    </h2><br>
+    <div>
+      <button onclick="desfazer()" class="custom-buttona">Desfazer</button>
+    </div>
+    <div id="editor" contenteditable="true" oninput="atualizarPilha()"></div>
+    <br><br>
+    <div class="center-text">
+      <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+    </div>
+  </div>
+
+
+  <script>
+    let pilhaDesfazer = [];
+    let editor = document.getElementById('editor');
+
+    function atualizarPilha() {
+      let textoAtual = editor.innerHTML;
+      pilhaDesfazer.push(textoAtual);
+    }
+
+    function desfazer() {
+      if (pilhaDesfazer.length > 1) {
+        pilhaDesfazer.pop();
+        let estadoAnterior = pilhaDesfazer.pop();
+        editor.innerHTML = estadoAnterior;
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.ctrlKey && event.key === 'z') {
+        desfazer();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

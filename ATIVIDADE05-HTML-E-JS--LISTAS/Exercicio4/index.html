@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCICIO 04</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+
+    ul {
+      list-style-type: none;
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    .sub-menu {
+      display: none;
+      margin-left: 20px;
+    }
+
+    .botao-retorno {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="center-text">Menu de Navegação Hierárquico:<br><br>
+    • Crie uma estrutura em árvore que armazene um menu de navegação hierárquico de uma página web.
+    <br>• Cada nó deve possuir um nome, e apresentar sempre que tiver os nós filhos.
+  </h2><br>
+
+<div style="border: 1px solid white;">
+<h2>Menu de Navegação Hierárquico</h2>
+
+<ul id="menu">
+  <li onclick="toggleSubMenu('produtos')">Produtos
+    <ul id="produtos" class="sub-menu">
+      <li onclick="toggleSubMenu('eletronicos')">Eletrônicos
+        <ul id="eletronicos" class="sub-menu">
+          <li>Smartphones</li>
+          <li>Computadores</li>
+        </ul>
+      </li>
+      <li onclick="toggleSubMenu('roupas')">Roupas
+        <ul id="roupas" class="sub-menu">
+          <li>Camisetas</li>
+          <li>Calças</li>
+        </ul>
+      </li>
+      <li onclick="toggleSubMenu('livros')">Livros
+        <ul id="livros" class="sub-menu">
+          <li onclick="toggleSubMenu('ficcao')">Ficção
+            <ul id="ficcao" class="sub-menu">
+              <li>Romance</li>
+              <li>Aventura</li>
+            </ul>
+          </li>
+          <li onclick="toggleSubMenu('nao_ficcao')">Suspense
+            <ul id="nao_ficcao" class="sub-menu">
+              <li>Biografia</li>
+              <li>História</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="center-text">
+  <a href="javascript:history.back()" class="botao-retorno">Voltar</a>
+</div>
+
+<script>
+  function toggleSubMenu(id) {
+    const subMenu = document.getElementById(id);
+    const subMenuDisplay = subMenu.style.display === 'none' || subMenu.style.display === '' ? 'block' : 'none';
+    subMenu.style.display = subMenuDisplay;
+  }
+</script>
+
+</body>
+</html>
